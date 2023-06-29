@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components"
 import "./navbar.css"
+import "./searchbar.scss"
 
 const NavLink = styled(Link)`
   color: gray;
@@ -23,10 +24,15 @@ const Navbar = () => {
                     <NavLink className="listItem" to="/Home" >Home</NavLink>
                     <NavLink className="listItem" to="/Explore" >Explore</NavLink>
                     <NavLink className="listItem" to="/About" >About</NavLink>
-                    <NavLink className="listItem" to="/Search" >Search</NavLink>
                     
                 </ul>
             </div>
+
+            <form class="search-container" action="//llamaswill.tumblr.com/search"> 
+  <input id="search-box" type="text" class="search-box" name="q" maxLength="20"/>
+  <label for="search-box" class="search-icon"><span class="fas fa-search search-icon"></span></label>
+  <input type="submit" id="search-submit" />
+</form>
             <div>
                 <button className="button">Log In/Sign Up</button>
             </div>
