@@ -1,9 +1,12 @@
 import React from 'react'
-import Navbar from '../navbar'
+import Navbar from '../Navbar'
 import styled from 'styled-components'
+
+import Cooltext from '../components/Cooltext'
 
 const Section = styled.div`
   height: 100vh;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,6 +22,7 @@ const Container = styled.div`
   justify-content: space-between;
   display: flex;
   flex-direction: column;
+  
 `;
 
 const Left = styled.div`
@@ -78,7 +82,7 @@ const Home = () => {
         <Navbar />
             <Container>
                 <Left>
-                   <Title>Home</Title>  
+                   <Title><img src="src\assets\logo.png" height="50px"/>Skill<Cooltext/></Title>  
                    <WhatWeDo>Did you know?</WhatWeDo>
                 </Left>
                 <Right>

@@ -1,33 +1,4 @@
 
-.section section{
- display: flex;
- justify-content: flex-start;
- flex-direction: row;
- 
-}
-
-.container {
-    width: 95vw;    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:0px 0px 10px 10px;
-   
-}
-
-.search-container{
-    width: 95vw;
-    display: flex;
-    justify-content: space-evenly;
-    padding:0px 0px 10px 10px;
-}
-
-
-.links{
-   display: flex;
-   align-items: center;
-   gap:40px;
-}
 
 .logo{
     height: 4em !important;
@@ -55,12 +26,7 @@
     }
 }
 
-.list {
-    display: flex;
-    gap:20px;
-    list-style: none;
-    
-}
+
 
 .listItem li{
     cursor: pointer;  
@@ -79,7 +45,7 @@
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
     cursor: pointer;  
     display: flex;  
-    left: 10px;
+    text-decoration: wavy;
     padding: 10px 20px;
     transition: background-color 400ms, border-color 400ms;    
 }

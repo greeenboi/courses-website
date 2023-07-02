@@ -3,7 +3,56 @@ import reactLogo from './assets/react.svg'
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components"
 import "./navbar.css"
-import "./searchbar.scss"
+import { BsSearch } from 'react-icons/bs'
+
+const Section = styled.div`
+  display: flex;
+  justify-content: center;
+  
+`;
+
+const Container = styled.div`
+    width: 95vw;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0px 10px;
+    height: auto;
+`;
+const Links = styled.div`
+   display: flex;
+   align-items: center;
+   gap:45px;
+`;
+const Logo = styled.img`
+    height: 50px;
+    
+`;
+const List = styled.ul`
+    display: flex;
+    gap:20px;
+    list-style: none;
+`;
+
+const Button = styled.button`
+  align-items: center;
+  
+  
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0px 8px 8px 0px;   
+  left: 2rem;
+  cursor: pointer;        
+  justify-content: center;
+  padding: 10px;
+  transition: background-color 500ms, border-color 400ms; 
+  &:hover{
+    background-color: rgba(100, 198, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+`
 
 const NavLink = styled(Link)`
   color: gray;
@@ -14,30 +63,46 @@ const NavLink = styled(Link)`
   }
 `;
 
+const Form = styled.form`
+
+`
+
+const Input = styled.input`
+  padding: 10px;
+  background-color: rgba(0,0,0,0.3);
+  color:rgba(255,255,255,0.6);
+  border:none;
+  border-radius:8px 0px 0px 8px;
+  
+  padding-left:2rem;
+  &:focus{
+    background-color: rgba(0,0,0,0.6);
+    border-color:rgba(0,0,0,0.8);
+  }
+`
+
 const Navbar = () => {
   return (
-    <section className="section">
-        <div className="container">
-            <div className="links">
+    <Section>
+        <Container>
+            <Links>
                 <img src={reactLogo} className="logo" alt="react" />
-                <ul className="list">
+                <List>
                     <NavLink className="listItem" to="/Home" >Home</NavLink>
                     <NavLink className="listItem" to="/Explore" >Explore</NavLink>
                     <NavLink className="listItem" to="/About" >About</NavLink>
                     
-                </ul>
-            </div>
-
-            <form class="search-container" action="//llamaswill.tumblr.com/search"> 
-  <input id="search-box" type="text" class="search-box" name="q" maxLength="20"/>
-  <label for="search-box" class="search-icon"><span class="fas fa-search search-icon"></span></label>
-  <input type="submit" id="search-submit" />
-</form>
-            <div>
-                <button className="button">Log In/Sign Up</button>
-            </div>
-        </div>
-    </section>
+                </List>
+            </Links>
+            <Links>
+                <Form>
+                  <Input id="search-box" type="text" placeholder='Type here...'/>
+                  <Button type="submit" className='button_class'><BsSearch/></Button>
+                </Form>
+                <button className="button">Log In</button>
+            </Links>
+        </Container>
+        </Section>
   )
 }
 
