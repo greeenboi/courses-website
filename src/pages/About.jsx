@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../navbar'
+import Navbar from '../Navbar'
 import styled from "styled-components"
 
 const Body = styled.body`
@@ -9,10 +9,7 @@ const Body = styled.body`
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
-  background:url(https://images.unsplash.com/photo-1687851898832-650714860119?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80) !important;
-  background-position:center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  
 `
 
 const Section = styled.div`

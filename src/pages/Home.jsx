@@ -19,31 +19,27 @@ const Container = styled.div`
   height: 100vh;
   width: 99vw;
   scrolling: true;
-  justify-content: space-between;
+  justify-content: space-evenly;
   display: flex;
   flex-direction: column;
   
 `;
 
-const Left = styled.div`
-  flex:2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap:20px;
-`;
+
 
 const Title = styled.h1`
-  font-size: 70px;
+  font-size: 120px;
   border-radius: clamp(0.4rem, 0.75vw, 1rem);
   color: rgba(255,255,255,0.9);
-  
+  font-family: 'Dancing Script', cursive;
 `;
 
-const WhatWeDo = styled.div`
+const WhatWeDo = styled.h4`
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Rubik', sans-serif;
+  font-weight: oblique;
   gap:10px;
 `;
 
@@ -81,27 +77,11 @@ const Home = () => {
     <Section>
         <Navbar />
             <Container>
-                <Left>
-                   <Title><img src="src\assets\logo.png" height="50px"/>Skill<Cooltext/></Title>  
-                   <WhatWeDo>Did you know?</WhatWeDo>
-                </Left>
-                <Right>
-                    <Card>
-                        <Subtitle>Is this a home page?</Subtitle>
-                    </Card>
-                    <Desc>Yes,This is a home page</Desc>                    
-                </Right>
-                <Card>
-                    <Subtitle>                        
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-                        officia deserunt mollit anim id est laborum.
-                    </Subtitle>
-                </Card>
+                
+                   <Title><img src="src\assets\logo.png" height="70px"/>Skill<Cooltext/></Title>  
+                   <WhatWeDo>Build Your Skills Online</WhatWeDo>
+                
+                
             </Container>
     </Section>
   )

@@ -1,5 +1,5 @@
 import React from 'react'
-import reactLogo from './assets/react.svg'
+
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components"
 import "./navbar.css"
@@ -86,12 +86,12 @@ const Navbar = () => {
     <Section>
         <Container>
             <Links>
-                <img src={reactLogo} className="logo" alt="react" />
+            <NavLink className="listItem" to="/Home" ><img src="src\assets\logo.png" className="logo" alt="react" /></NavLink>
                 <List>
                     <NavLink className="listItem" to="/Home" >Home</NavLink>
                     <NavLink className="listItem" to="/Explore" >Explore</NavLink>
                     <NavLink className="listItem" to="/About" >About</NavLink>
-                    
+                    <NavLink className="listItem" to="/Forum" >Forum</NavLink>
                 </List>
             </Links>
             <Links>

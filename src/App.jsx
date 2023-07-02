@@ -8,7 +8,7 @@ import About from "./pages/about"
 import Explore from "./pages/explore"
 import Search from "./pages/search"
 import NotFound from './pages/Notfound';
-
+import Forum from "./pages/forum";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,6 +22,7 @@ function App() {
                 <Route path='/About' element={<About />} />
                 <Route path='/Explore' element={<Explore />} />
                 <Route path='/Search' element={<Search />} />
+                <Route path='/Forum' element={<Forum />} />
                 <Route path='*' element={<NotFound />}/>
                 
         </Routes>

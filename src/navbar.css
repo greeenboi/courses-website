@@ -6,23 +6,31 @@
 }
 
 .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+    filter: drop-shadow(0 0 2em #64ffe0aa);
     cursor: pointer;
 }
  
   
-@keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
+@keyframes logo-bob {
+    0% {
+        transform: translateY(0) ;
     }
-    to {
-        transform: rotate(360deg);
+    25% {
+        transform: translateY(-1rem);
+    }
+
+    75% {
+        transform: translateY(1rem);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }
   
 @media (prefers-reduced-motion: no-preference) {
     .logo {
-        animation: logo-spin infinite 20s linear;
+        animation: logo-bob infinite 12s ease-in ;
     }
 }
 
