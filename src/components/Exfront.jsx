@@ -1,14 +1,13 @@
 import React from 'react'
-import styled  from 'styled-components';
+import styled from 'styled-components'
+import Navbar from '../Navbar';
 
-const Section = styled.section`
-  height: 180vh;
-  width:100vw;
+const Section = styled.div`
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  scroll: auto;
   justify-content: space-between;
 `;
 
@@ -20,6 +19,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 const Left = styled.div`
   flex:2;
   display: flex;
@@ -35,7 +35,7 @@ const Title = styled.h1`
   
 `;
 
-const WhatWeDo = styled.h4`
+const WhatWeDo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,10 +43,22 @@ const WhatWeDo = styled.h4`
 `;
 
 
-const Subtitle = styled.h4`
+const Subtitle = styled.div`
   display: flex;
   justify-content: right;
   padding:1rem;
+`;
+
+const Desc = styled.p`
+  font-size:24px;
+  
+  color: rgba(120,120,120,0.9);
+`;
+
+const Right = styled.div`
+  flex:3;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Card = styled.div`
@@ -58,43 +70,25 @@ const Card = styled.div`
     border-radius:5px;
     box-shadow: 2px 2px 4px rgba(black, 0.25);
 `
-const Right = styled.div`
-  flex:3;
-  align-items: center;
-  justify-content: center;
-`;
-const Desc = styled.p`
-  font-size:24px;
-  
-  color: rgba(120,120,120,0.9);
-`;
 
-
-
-const Explore = () => {
+const Exfront = () => {
   return (
     <Section>
-      <Container>
-        <Left>
-        <Title>Explore</Title>  
-        <WhatWeDo>Did you know?</WhatWeDo>
-        </Left>
-        <Right>
-            <Card>
-                <Subtitle>Is this the Explore page?</Subtitle>
-            </Card>
-            <Desc>Yes,This is the explore page</Desc>
-        </Right>
-      </Container>
-      <Container>
-        Cards
-        <Card>
-            <Subtitle>Is this the Explore page?</Subtitle>
-        </Card>
-        <Desc>Yes,This is the explore page</Desc>
-      </Container>
+        <Container>
+                <Left>
+                <Title>Explore</Title>  
+                <WhatWeDo>Did you know?</WhatWeDo>
+                </Left>
+                <Right>
+                    <Card>
+                        <Subtitle>Is this the Explore page?</Subtitle>
+                    </Card>
+                    <Desc>Yes,This is the explore page</Desc>
+                </Right>
+            </Container>
         
     </Section>
   )
 }
-export default Explore
+
+export default Exfront

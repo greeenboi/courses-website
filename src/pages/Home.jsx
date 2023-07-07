@@ -1,31 +1,26 @@
 import React from 'react'
-import Navbar from '../Navbar'
 import styled from 'styled-components'
 
 import Cooltext from '../components/Cooltext'
 
-const Section = styled.div`
-  height: 100vh;
-  
+const Section = styled.section`
+  height: 180vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  scrolling: true;
+  
 `;
-
 const Container = styled.div`
   height: 100vh;
   width: 99vw;
-  scrolling: true;
-  justify-content: space-evenly;
+  justify-content: space-around;
   display: flex;
   flex-direction: column;
   
 `;
-
-
 
 const Title = styled.h1`
   font-size: 120px;
@@ -42,7 +37,6 @@ const WhatWeDo = styled.h4`
   font-weight: oblique;
   gap:10px;
 `;
-
 
 const Subtitle = styled.div`
   display: flex;
@@ -71,17 +65,16 @@ const Card = styled.div`
     box-shadow: 2px 2px 4px rgba(black, 0.25);
 `
 
-
 const Home = () => {
   return (
     <Section>
-        <Navbar />
             <Container>
-                
-                   <Title><img src="src\assets\logo.png" height="70px"/>Skill<Cooltext/></Title>  
-                   <WhatWeDo>Build Your Skills Online</WhatWeDo>
-                
-                
+                <Title><img src="src\assets\logo.png" height="70px"/>Skill<Cooltext/></Title>  
+                <WhatWeDo>Build Your Skills Online</WhatWeDo>
+            </Container>
+            <Container>
+                <Title><img src="src\assets\logo.png" height="70px"/>Skill<Cooltext/></Title>  
+                <WhatWeDo>Build Your Skills Online</WhatWeDo>
             </Container>
     </Section>
   )

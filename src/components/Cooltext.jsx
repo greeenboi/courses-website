@@ -1,32 +1,36 @@
-import React from 'react'
+import { React, useEffect } from 'react'
 import './cool.css'
 
-let index = 0,
-    interval = 1000;
 
-const rand = (min, max) => 
-Math.floor(Math.random() * (max - min + 1)) + min;
-
-const animate = star => {
-    star.style.setProperty("--star-left", `${rand(-10, 100)}%`);
-    star.style.setProperty("--star-top", `${rand(-40, 80)}%`);
-
-    star.style.animation = "none";
-    star.offsetHeight;
-    star.style.animation = "";
-}
 
 
 const Cooltext = () => {
 
+    var index = 0;
+    var interval = 1000;
+
+    useEffect(() => {
+        const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
     
-    for(const star of document.getElementsByClassName("magic-star")) {
-    setTimeout(() => {
-        animate(star);
-        
-        setInterval(() => animate(star), 1000);
-    }, index++ * (interval / 3))
-    }
+        const animate = star => {
+          star.style.setProperty("--star-left", `${rand(-10, 100)}%`);
+          star.style.setProperty("--star-top", `${rand(-40, 80)}%`);
+    
+          star.style.animation = "none";
+          star.offsetHeight;
+          star.style.animation = "";
+        };
+    
+        const magicStars = Array.from(document.getElementsByClassName("magic-star"));
+    
+        magicStars.forEach((star, index) => {
+          setTimeout(() => {
+            animate(star);
+    
+            setInterval(() => animate(star), 1000);
+          }, index * (interval / 3));
+        });
+      }, []);
 
   return (
     

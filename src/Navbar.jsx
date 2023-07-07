@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components"
 import "./navbar.css"
@@ -25,10 +24,7 @@ const Links = styled.div`
    align-items: center;
    gap:45px;
 `;
-const Logo = styled.img`
-    height: 50px;
-    
-`;
+
 const List = styled.ul`
     display: flex;
     gap:20px;
@@ -86,12 +82,12 @@ const Navbar = () => {
     <Section>
         <Container>
             <Links>
-            <NavLink className="listItem" to="/Home" ><img src="src\assets\logo.png" className="logo" alt="react" /></NavLink>
+            <NavLink className="listItem" to="/" ><img src="src\assets\logo.png" className="logo" alt="react" /></NavLink>
                 <List>
-                    <NavLink className="listItem" to="/Home" >Home</NavLink>
                     <NavLink className="listItem" to="/Explore" >Explore</NavLink>
                     <NavLink className="listItem" to="/About" >About</NavLink>
                     <NavLink className="listItem" to="/Forum" >Forum</NavLink>
+                    <NavLink className="listItem" to="/Contact" >Contact</NavLink>
                 </List>
             </Links>
             <Links>

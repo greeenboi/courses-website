@@ -1,19 +1,10 @@
 import React from 'react'
-import Navbar from '../Navbar'
 import styled from "styled-components"
 
-const Body = styled.body`
-  margin: 0;
-  display: flex;
-  place-items: center;
-  justify-content: center;
-  min-width: 320px;
-  min-height: 100vh;
-  
-`
 
 const Section = styled.div`
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,9 +73,7 @@ const Card = styled.div`
 
 const Forum = () => {
   return (
-    <Body>
     <Section>
-        <Navbar />
             <Container>
                 <Left>
                    <Title>Forum</Title>  
@@ -98,7 +87,7 @@ const Forum = () => {
                 </Right>
             </Container>
     </Section>
-    </Body>
+    
   )
 }
 

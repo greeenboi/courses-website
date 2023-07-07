@@ -1,19 +1,10 @@
 import React from 'react'
-import Navbar from '../Navbar'
 import styled from "styled-components"
 
-const Body = styled.body`
-  margin: 0;
-  display: flex;
-  place-items: center;
-  justify-content: center;
-  min-width: 320px;
-  min-height: 100vh;
-  
-`
 
 const Section = styled.div`
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,9 +74,8 @@ const Card = styled.div`
 
 const About = () => {
   return (
-    <Body>
+    
     <Section>
-        <Navbar />
             <Container>
                 <Left>
                    <Title>About</Title>  
@@ -99,7 +89,7 @@ const About = () => {
                 </Right>
             </Container>
     </Section>
-    </Body>
+    
   )
 }
 export default About

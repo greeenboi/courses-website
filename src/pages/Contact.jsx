@@ -1,14 +1,14 @@
 import React from 'react'
-import Navbar from '../Navbar'
-import styled from "styled-components"
+import styled  from 'styled-components';
 
-
-const Section = styled.div`
-  height: 100vh;
+const Section = styled.section`
+  height: 180vh;
+  width:100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  scroll: auto;
   justify-content: space-between;
 `;
 
@@ -20,7 +20,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
 const Left = styled.div`
   flex:2;
   display: flex;
@@ -36,7 +35,7 @@ const Title = styled.h1`
   
 `;
 
-const WhatWeDo = styled.div`
+const WhatWeDo = styled.h4`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,21 +43,10 @@ const WhatWeDo = styled.div`
 `;
 
 
-const Subtitle = styled.div`
+const Subtitle = styled.h4`
   display: flex;
   justify-content: right;
   padding:1rem;
-`;
-const Desc = styled.p`
-  font-size:24px;
-  
-  color: rgba(120,120,120,0.9);
-`;
-
-const Right = styled.div`
-  flex:3;
-  align-items: center;
-  justify-content: center;
 `;
 
 const Card = styled.div`
@@ -70,26 +58,35 @@ const Card = styled.div`
     border-radius:5px;
     box-shadow: 2px 2px 4px rgba(black, 0.25);
 `
+const Right = styled.div`
+  flex:3;
+  align-items: center;
+  justify-content: center;
+`;
+const Desc = styled.p`
+  font-size:24px;
+  
+  color: rgba(120,120,120,0.9);
+`;
 
 
-const Search = () => {
+const Contact = () => {
   return (
     <Section>
-        <Navbar />
-            <Container>
-                <Left>
-                   <Title>Search</Title>  
-                   <WhatWeDo>Did you know?</WhatWeDo>
-                </Left>
-                <Right>
-                    <Card>
-                        <Subtitle>Is this a Search page?</Subtitle>
-                    </Card>
-                    <Desc>Yes,This is a Search page</Desc>
-                </Right>
-            </Container>
+      <Container>
+        <Left>
+        <Title>Contact</Title>  
+        <WhatWeDo>Did you know?</WhatWeDo>
+        </Left>
+        <Right>
+            <Card>
+                <Subtitle>Is this the Contact page?</Subtitle>
+            </Card>
+            <Desc>Yes,This is the Contact page</Desc>
+        </Right>
+      </Container>
     </Section>
   )
 }
 
-export default Search
+export default Contact
