@@ -1,25 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import Cooltext from '../components/Cooltext'
+import { useNavigate } from 'react-router-dom'
+import { FaArrowRightLong } from 'react-icons/fa6'
+import "../components/home.scss"
 
 const Section = styled.section`
   height: 180vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  
 `;
 const Container = styled.div`
   height: 100vh;
-  width: 99vw;
+  width: 100vw;
   justify-content: space-around;
   display: flex;
   flex-direction: column;
-  
 `;
 
 const Title = styled.h1`
@@ -55,17 +53,58 @@ const Right = styled.div`
   justify-content: center;
 `;
 
+const Grid = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:2rem;
+`
 const Card = styled.div`
-    width:10%;
-    padding:3rem;
-    backdrop-filter: blur(3px);
-    background-color: rgba(255,255,255, 0.1);
-    border: 1px solid rgba(255,255,255, 0.1);    
-    border-radius:5px;
-    box-shadow: 2px 2px 4px rgba(black, 0.25);
+  display: flex;
+  flex-direction: column;
+  padding:0.5em;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 5px;
+  height: 28rem;
+  width: 20rem;
+  position: relative;
+  background: linear-gradient(135deg, var(--card-grd1), var(--card-grd2));
+  border-radius: 20px;
+  transition: all ease 0.3s;
+  z-index: 1;
+  &:hover{
+    background: linear-gradient(-135deg, var(--card-grd1), var(--card-grd2));
+    filter: drop-shadow(10px 10px 10px rgba(173,155,255,0.6));
+  }
+  
+  `
+const Logo = styled.img`
+  
+  padding:'5px';
+  filter: drop-shadow(0 1em 2em #64ffe0aa);
+`
+const H2 = styled.h2`
+  font-family: 'Roboto', sans-serif;
+`
+const CardText = styled.p`
+  margin:5px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  justify-content: center;
+
 `
 
+
 const Home = () => {
+
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = `/Explore`; 
+    navigate(path);
+  }
+
   return (
     <Section>
             <Container>
@@ -73,8 +112,33 @@ const Home = () => {
                 <WhatWeDo>Build Your Skills Online</WhatWeDo>
             </Container>
             <Container>
-                <Title><img src="src\assets\logo.png" height="70px"/>Skill<Cooltext/></Title>  
-                <WhatWeDo>Build Your Skills Online</WhatWeDo>
+                <Desc>Our Learning Opportunities</Desc>
+                <WhatWeDo>A New way to improve your skills and spice up your portfolio!</WhatWeDo>
+              <Grid >
+                <Card>
+                  <Logo width="96" height="96" src="https://img.icons8.com/nolan/96/test-passed.png" />
+                  <H2>Free Online Courses</H2>
+                  <CardText>Interactive Learning for absolute beginners in coding!</CardText>
+                </Card>
+                <Card>
+                  <Logo width="96" height="96" src="https://img.icons8.com/external-icongeek26-outline-gradient-icongeek26/128/external-laptop-lifestyle-icongeek26-outline-gradient-icongeek26.png"/>
+                  <H2>Project Based Learning</H2>
+                  <CardText>Short highly-focused videos that make learning to code easy and addicting!</CardText>
+                  <button className="learn-more" onClick={routeChange}>
+                    <div className="circle">
+                      <span className="icon arrow"></span>
+                    <p className="button-text">Try it Out</p>
+                    </div>
+                  </button>
+                </Card>
+                <Card>
+                  <Logo width="96" height="96" src="https://img.icons8.com/nolan/96/portfolio.png" alt="portfolio"/>
+                  <H2>Create an Impressive Portfolio</H2>
+                  <CardText>Quick tutorials on Hot, New Technologies and Concepts</CardText>
+                </Card>
+              </Grid>
+              
+ 
             </Container>
     </Section>
   )

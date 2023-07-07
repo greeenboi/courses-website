@@ -10,8 +10,6 @@
   background-position: center ;*/
   background: radial-gradient(ellipse farthest-side at 120vw 30vh,#b752f9 0%,#26007a 80%);
   overflow-x: hidden;
-  
-  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

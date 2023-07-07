@@ -7,7 +7,7 @@ import { BsSearch } from 'react-icons/bs'
 const Section = styled.div`
   display: flex;
   justify-content: center;
-  
+  width: 95vw;
 `;
 
 const Container = styled.div`
