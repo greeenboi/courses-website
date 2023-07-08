@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Cooltext from '../components/Cooltext'
 import { useNavigate } from 'react-router-dom'
-import { FaArrowRightLong } from 'react-icons/fa6'
+import { FaArrowRight } from 'react-icons/fa'
 import "../components/home.scss"
 
 const Section = styled.section`
@@ -16,6 +16,7 @@ const Container = styled.div`
   height: 100vh;
   width: 100vw;
   justify-content: space-around;
+  align-items: center;
   display: flex;
   flex-direction: column;
 `;
@@ -95,7 +96,25 @@ const CardText = styled.p`
   justify-content: center;
 
 `
-
+const Button = styled.button`
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+  gap:10px;
+  width: 30%;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px 8px 8px 6px;   
+  cursor: pointer;        
+  justify-content: center;
+  padding: 10px;
+  transition: background-color 500ms, border-color 400ms; 
+  &:hover{
+    filter: drop-shadow(10px 10px 10px rgba(173,155,255,0.6));
+    background-color: rgba(100, 198, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+`
 
 const Home = () => {
 
@@ -110,6 +129,7 @@ const Home = () => {
             <Container>
                 <Title><img src="src\assets\logo.png" height="70px"/>Skill<Cooltext/></Title>  
                 <WhatWeDo>Build Your Skills Online</WhatWeDo>
+                <Button onClick={routeChange}>Start Learning Now! <FaArrowRight/></Button>
             </Container>
             <Container>
                 <Desc>Our Learning Opportunities</Desc>

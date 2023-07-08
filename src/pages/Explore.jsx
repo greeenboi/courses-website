@@ -50,8 +50,11 @@ const Subtitle = styled.h4`
 `;
 
 const Card = styled.div`
-    width:10%;
+    
+    display: flex;
+    align-items: center;
     padding:3rem;
+    justify-content: center;
     backdrop-filter: blur(3px);
     background-color: rgba(255,255,255, 0.1);
     border: 1px solid rgba(255,255,255, 0.1);    
@@ -69,6 +72,17 @@ const Desc = styled.p`
   color: rgba(120,120,120,0.9);
 `;
 
+const Grid = styled.div`
+  display: grid;
+  margin-right:10px;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  row-gap: 3rem;
+  column-gap: 1rem;
+  margin-bottom: 40px;
+`
 
 
 const Explore = () => {
@@ -80,18 +94,41 @@ const Explore = () => {
         <WhatWeDo>Did you know?</WhatWeDo>
         </Left>
         <Right>
+            <Desc>Courses Type1</Desc>
+          <Grid>
             <Card>
                 <Subtitle>Is this the Explore page?</Subtitle>
             </Card>
-            <Desc>Yes,This is the explore page</Desc>
+            <Card>
+                <Subtitle>Is this the Explore page?</Subtitle>
+            </Card>
+            <Card>
+                <Subtitle>Is this the Explore page?</Subtitle>
+            </Card>
+            <Card>
+                <Subtitle>Is this the Explore page?</Subtitle>
+            </Card>
+          </Grid>
         </Right>
       </Container>
       <Container>
-        Cards
-        <Card>
-            <Subtitle>Is this the Explore page?</Subtitle>
-        </Card>
-        <Desc>Yes,This is the explore page</Desc>
+        <Right>
+          <Desc>Courses type 2</Desc>
+          <Grid>
+            <Card>
+                <Subtitle>Is this the Explore page?</Subtitle>
+            </Card>
+            <Card>
+                <Subtitle>Is this the Explore page?</Subtitle>
+            </Card>
+            <Card>
+                <Subtitle>Is this the Explore page?</Subtitle>
+            </Card>
+            <Card>
+                <Subtitle>Is this the Explore page?</Subtitle>
+            </Card>
+          </Grid>
+        </Right>
       </Container>
         
     </Section>
