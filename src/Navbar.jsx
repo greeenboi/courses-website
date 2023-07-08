@@ -60,7 +60,8 @@ const NavLink = styled(Link)`
 `;
 
 const Form = styled.form`
-
+  display: flex;
+  justify-content: flex-start;
 `
 
 const Input = styled.input`
