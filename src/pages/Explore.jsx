@@ -1,6 +1,7 @@
-import React from 'react'
+import { React , useState } from 'react'
 import styled  from 'styled-components';
 import { FaReact } from 'react-icons/fa';
+import "../components/explore.scss"
 
 const Section = styled.section`
   height: 180vh;
@@ -50,25 +51,7 @@ const Subtitle = styled.h4`
   padding:1rem;
 `;
 
-const Card = styled.div`
-    display: flex;
-    align-items: center;
-    padding:3rem;
-    justify-content: center;
-    backdrop-filter: blur(3px);
-    flex-direction:column;
-    background-color: rgba(255,255,255, 0.1);
-    border: 1px solid rgba(255,255,255, 0.1);    
-    border-radius:5px;
-    box-shadow: 2px 2px 4px rgba(black, 0.25);
-    transition: all 600ms ease-in-out;
-    &:hover{
-      padding:4rem;
-      cursor: pointer;
-      background-color: rgba(255,255,255,0.2);
-      backdrop-filter: blur(4px);
-    }
-`
+
 const Right = styled.div`
   flex:3;
   display: flex;
@@ -109,6 +92,23 @@ const Grid = styled.div`
 
 
 const Explore = () => {
+
+  const [imgPosition, setImgPosition] = useState({ left: 0, top: 0 });
+
+  
+  const handleMouseMove = (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const img = e.target.querySelector("img");
+    try {
+      const left = e.clientX - rect.left - img.offsetWidth / 4 ;
+      const top = e.clientY - rect.top - img.offsetHeight / 4;
+      setImgPosition({ left, top });
+      
+    } catch (error) {
+      console.log();
+    }
+  };
+  
   return (
     <Section>
       <Container>
@@ -119,22 +119,25 @@ const Explore = () => {
         <Right>
             <Desc>Web Development</Desc>
           <Grid>
-            <Card>
+            <nav className="card" id="nav" onMouseMove={handleMouseMove} >
                 <Subtitle>Weather Website</Subtitle>
                 <FaReact style={{alignSelf:'flex-start'}}/>
-            </Card>
-            <Card>
+            <img 
+              style={{ scale:"0.5", position: 'absolute', left: imgPosition.left, top: imgPosition.top }}
+              src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" />   
+            </nav>
+            <nav className="card">
                 <Subtitle>Chat Application</Subtitle>
                 <FaReact style={{alignSelf:'flex-start'}}/>
-            </Card>
-            <Card>
+            </nav>
+            <nav className="card">
                 <Subtitle>Sketching Web-App</Subtitle>
                 <FaReact style={{alignSelf:'flex-start'}}/>
-            </Card>
-            <Card>
+            </nav>
+            <nav className="card">
                 <Subtitle>Responsive NavBar</Subtitle>
                 <FaReact style={{alignSelf:'flex-start'}}/>
-            </Card>
+            </nav>
           </Grid>
         </Right>
       </Container>
@@ -142,31 +145,31 @@ const Explore = () => {
         <Right>
           <Desc>Courses type 2</Desc>
           <Grid>
-            <Card>
+            <nav className="card">
                 <Subtitle>Is this the Explore page?</Subtitle>
-            </Card>
-            <Card>
+            </nav>
+            <nav className="card">
                 <Subtitle>Is this the Explore page?</Subtitle>
-            </Card>
-            <Card>
+            </nav>
+            <nav className="card">
                 <Subtitle>Is this the Explore page?</Subtitle>
-            </Card>
-            <Card>
+            </nav>
+            <nav className="card">
                 <Subtitle>Is this the Explore page?</Subtitle>
-            </Card>
+            </nav>
 
-            <Card>
+            <nav className="card">
                 <Subtitle>Is this the Explore page?</Subtitle>
-            </Card>
-            <Card>
+            </nav>
+            <nav className="card">
                 <Subtitle>Is this the Explore page?</Subtitle>
-            </Card>
-            <Card>
+            </nav>
+            <nav className="card">
                 <Subtitle>Is this the Explore page?</Subtitle>
-            </Card>
-            <Card>
+            </nav>
+            <nav className="card">
                 <Subtitle>Is this the Explore page?</Subtitle>
-            </Card>
+            </nav>
           </Grid>
         </Right>
       </Container>
