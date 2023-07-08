@@ -10,6 +10,7 @@ import Explore from "./pages/explore"
 import NotFound from './pages/Notfound';
 import Forum from "./pages/Forum";
 import Contact from './pages/Contact';
+import Weather from './courses/Weatherweb';
 
 function App() {
   
@@ -24,6 +25,7 @@ function App() {
                   <Route path='/Explore' element={<Explore />} />
                   <Route path='/Forum' element={<Forum />} />
                   <Route path='/Contact' element={<Contact />} />
+                  <Route path='/Weather' element={<Weather />} />
                   <Route path='*' element={<NotFound />}/>
           </Routes>
       </Router>

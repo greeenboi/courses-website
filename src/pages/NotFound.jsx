@@ -7,7 +7,6 @@ const Container = styled.div`
     height: 100vh;    
     margin:0;
     justify-content: flex-start;
-    
     display: flex;
     flex-direction: column;
 `
@@ -21,7 +20,7 @@ const Top = styled.div`
 const Footer = styled.div`   
     display: flex;
     flex-direction: row;
-    flex:1;    
+    flex:2;    
     justify-content: space-between;
 `
 
@@ -29,8 +28,7 @@ const NotFound = () => {
   return (
     <Container>
         <Top>
-            <div className="error">404</div>  
-                 
+            <div className="error">404</div> 
             <div className="info">Page is Missing/Non existent</div>            
         </Top>
         <Footer>

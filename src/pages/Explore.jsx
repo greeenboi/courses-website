@@ -2,6 +2,8 @@ import { React , useState } from 'react'
 import styled  from 'styled-components';
 import { FaReact } from 'react-icons/fa';
 import "../components/explore.scss"
+import { Link ,useNavigate } from 'react-router-dom'
+
 
 const Section = styled.section`
   height: 180vh;
@@ -94,10 +96,12 @@ const Grid = styled.div`
 const Explore = () => {
 
   const [imgPosition, setImgPosition] = useState({ left: 0, top: 0 });
-
+  const navigate = useNavigate();
   
   const handleMouseMove = (e) => {
     const rect = e.target.getBoundingClientRect();
+    
+
     const img = e.target.querySelector("img");
     try {
       const left = e.clientX - rect.left - img.offsetWidth / 4 ;
@@ -109,6 +113,10 @@ const Explore = () => {
     }
   };
   
+  const handleClick = (link) => {
+    navigate(link);
+  };
+
   return (
     <Section>
       <Container>
@@ -119,24 +127,33 @@ const Explore = () => {
         <Right>
             <Desc>Web Development</Desc>
           <Grid>
-            <nav className="card" id="nav" onMouseMove={handleMouseMove} >
+            <nav className="card" id="nav" onMouseMove={handleMouseMove} onClick={() => handleClick('/Weather')}>
                 <Subtitle>Weather Website</Subtitle>
                 <FaReact style={{alignSelf:'flex-start'}}/>
             <img 
               style={{ scale:"0.5", position: 'absolute', left: imgPosition.left, top: imgPosition.top }}
               src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" />   
             </nav>
-            <nav className="card">
+            <nav className="card" id="nav" onMouseMove={handleMouseMove}>
                 <Subtitle>Chat Application</Subtitle>
                 <FaReact style={{alignSelf:'flex-start'}}/>
+                <img 
+                  style={{ scale:"0.5", position: 'absolute', left: imgPosition.left, top: imgPosition.top }}
+                  src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1120&q=80" />
             </nav>
-            <nav className="card">
+            <nav className="card" onMouseMove={handleMouseMove}>
                 <Subtitle>Sketching Web-App</Subtitle>
                 <FaReact style={{alignSelf:'flex-start'}}/>
+                <img 
+                  style={{ scale:"0.5", position: 'absolute', left: imgPosition.left, top: imgPosition.top }}
+                  src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1168&q=80"/>
             </nav>
-            <nav className="card">
+            <nav className="card" onMouseMove={handleMouseMove}>
                 <Subtitle>Responsive NavBar</Subtitle>
                 <FaReact style={{alignSelf:'flex-start'}}/>
+                <img 
+                  style={{ scale:"0.5", position: 'absolute', left: imgPosition.left, top: imgPosition.top }}
+                  src="https://images.unsplash.com/photo-1496065187959-7f07b8353c55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"/>
             </nav>
           </Grid>
         </Right>
