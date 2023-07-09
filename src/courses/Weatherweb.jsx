@@ -25,7 +25,7 @@ const Pcard = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color:rgba(42, 46, 53, 0.6);
+  background-color:rgba(42, 46, 53, 0.7);
   border-radius:0.5rem;
   margin-bottom:1rem;
   margin-top:0.75rem;
@@ -44,16 +44,6 @@ const Img = styled.img`
   margin:0px 0px 0px 0px;
   transition: all 500ms ease-in-out;
   box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
-  &:nth-child(1){
-    height:65px;
-    width:65px;
-  }
-  &:nth-child(1):hover{
-    height:60px;
-    width:60px;
-    opacity:0.8;
-    border: 4px solid rgba(255,255,255,0.2);
-  }
   &:hover{
     height:50px;
     width:50px;
