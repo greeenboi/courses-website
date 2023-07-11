@@ -7,7 +7,7 @@ import Navbar from './Navbar';
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Explore from "./pages/Explore"
-import NotFound from './pages/Notfound';
+import NotFound from './pages/NotFound';
 import Forum from "./pages/Forum";
 import Contact from './pages/Contact';
 import Weather from './courses/Weatherweb';
