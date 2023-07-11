@@ -83,7 +83,7 @@ const Navbar = () => {
     <Section>
         <Container>
             <Links>
-            <NavLink className="listItem" to="/" ><img src="src\assets\logo.png" className="logo" alt="react" /></NavLink>
+            <NavLink className="listItem" to="/" ><img src="https://i.postimg.cc/Qx41fFVX/logo.png" className="logo" alt="react" /></NavLink>
                 <List>
                     <NavLink className="listItem" to="/Explore" >Explore</NavLink>
                     <NavLink className="listItem" to="/About" >About</NavLink>
