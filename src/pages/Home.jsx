@@ -127,7 +127,7 @@ const Home = () => {
   return (
     <Section>
             <Container>
-                <Title><img src="src\assets\logo.png" height="70px"/>Skill<Cooltext/></Title>  
+                <Title><img src="https://i.postimg.cc/Qx41fFVX/logo.png" height="70px"/>Skill<Cooltext/></Title>  
                 <WhatWeDo>Build Your Skills Online</WhatWeDo>
                 <Button onClick={routeChange}>Start Learning Now! <FaArrowRight/></Button>
             </Container>
