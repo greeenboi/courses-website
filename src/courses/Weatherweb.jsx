@@ -1,15 +1,15 @@
-import { React ,useEffect, useRef } from 'react'
+import { React ,useEffect} from 'react'
 import styled from 'styled-components'
 import hljs from "highlight.js";
 
 const Section = styled.section`
-  height: 100vh;
+  height: 200vh;
   width:100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  scroll: auto;
+  scroll: smooth;
   
 `;
 
@@ -69,10 +69,17 @@ const Title = styled.h1`
   -webkit-background-clip: text;
 `
 const Subtitle = styled.h2`
-
+  font-family: 'Raleway', sans-serif;
+  font-size:10px;
+  color: rgb(100,200,255);
+  transition: all 400ms ease-in;
+  &:hover{
+    cursor:pointer;
+    font-size:11px;
+  }
 `
 
-const Text1 = styled.p`
+const Text1 = styled.div`
   font-size:15px;
   padding:10px;
   font-family:'Sofia Sans', sans-serif;
@@ -83,12 +90,20 @@ const Text1 = styled.p`
   gap:15px;
   justify-content:space-between;
 `
-const Text2 = styled.p`
+const Text2 = styled.div`
   font-size:18px;
   padding:10px;
   font-family:'Sofia Sans', sans-serif;
   font-weight:300;
   text-align:left;
+  &::first-letter{
+    padding:5px;
+    background-color: rgba(35, 35, 35,0.4);
+    margin: 1px;
+    border: 0;
+    border-radius: 2px;
+    color:rgba(30, 255, 157,0.8);
+  }
 `
 
 const Button = styled.button`
@@ -128,11 +143,31 @@ const Samp = styled.li`
   padding-left:2px;
   padding-right:2px;
 `
+const Item = styled.li`
+  padding:10px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size:16pItem
+`
+function escapeHtml(html) {
+  return html.replace(/&/g, "&amp;")
+             .replace(/</g, "&lt;")
+             .replace(/>/g, "&gt;")
+             .replace(/"/g, "&quot;")
+             .replace(/'/g, "&#039;");
+}
+
+function Code({ content }) {
+  const escapedHTML = escapeHtml(content);
+
+  return <code>{escapedHTML}</code>;
+}
 
 const Weather = () => {
   useEffect(() => {
     hljs.highlightAll();
   });
+  
+ 
 
   return (
     <Section>
@@ -152,11 +187,31 @@ const Weather = () => {
               We will be using the Open Weather API to get weather information on a specific city and Tailwind css to style the website.
               <br /><br />
               👉I will guide you through the Api key creation and help you get started with simple API operations like 'GET'and 'POST'. <br /><br />
-              👉Then I will help you setup the project as a simple Vite application with JS, Tailwind css and Publish your Website to a service provider like Netlify or Vercel.
+              👉Then I will help you setup the project as a simple Vite application with JS, Tailwind css and Publish your Website to a service provider like Netlify or Vercel.<br /><br />
+              <Subtitle onClick={() => window.open('https://whatstheweatherhere.netlify.app')} >||Try out a demo here||</Subtitle>
+            </Text2>
+            <Text2>
+              <b>Contents 👇</b>
+              <ul style={{listStyle:"none",gap:"5px"}}>
+                <Item><a href="#Apicreate">Creating an account on Open Weather Api</a></Item>
+              </ul>
+            </Text2>
+          </Card>
+          <Card>
+            <Text2 id="Apicreate">
+              To create an account on Open Weather follow the instructions below👇
+              <ul style={{listStyle:"none",gap:"10px"}}>
+                <Item><button style={{border:'2px',borderColor:"#fff",backgroundColor:"rgba(10,10,10,0.2)", padding:"8px"}} onClick={() => window.open('https://home.openweathermap.org/users/sign_up')}>{`>proceed to their website and create an account<`}</button></Item>
+                <Item>Once created, Proceed to your Api Keys <a href="https://home.openweathermap.org/api_keys">page</a> </Item>
+                <Item>
+                  <img src=""/> 
+                  Copy your Api-Key and keep it aside for now. We will need this later when we make requests to the provider for weather data
+                </Item>
+              </ul>
             </Text2>
             <div>
             <pre>
-              <code className="language-javascript">{`useEffect(() => { hljs.highlightAll(); });`}</code>
+              <Code className="language-javascript" content= {`useEffect(() => { hljs.highlightAll(); });`}/>
             </pre>
             </div>
           </Card>
