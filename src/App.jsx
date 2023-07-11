@@ -6,7 +6,7 @@ import './App.css'
 import Navbar from './Navbar';
 import Home from "./pages/Home"
 import About from "./pages/About"
-import Explore from "./pages/explore"
+import Explore from "./pages/Explore"
 import NotFound from './pages/Notfound';
 import Forum from "./pages/Forum";
 import Contact from './pages/Contact';
