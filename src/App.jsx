@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Routes, Route }
     from 'react-router-dom';
 import './App.css'
 
-import Navbar from './Navbar';
-import Home from "./pages/Home"
-import About from "./pages/About"
-import Explore from "./pages/Explore"
-import NotFound from './pages/NotFound';
-import Forum from "./pages/Forum";
-import Contact from './pages/Contact';
-import Weather from './courses/Weatherweb';
+import Navbar from '/src/Navbar';
+import Home from "/src/pages/Home"
+import About from "/src/pages/About"
+import Explore from "/src/pages/Explore"
+import NotFound from '/src/pages/NotFound';
+import Forum from "/src/pages/Forum";
+import Contact from '/src/pages/Contact';
+import Weather from '/src/courses/Weatherweb';
 
 function App() {
   
