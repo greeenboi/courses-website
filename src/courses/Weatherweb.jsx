@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import hljs from "highlight.js";
 
 const Section = styled.section`
-  height: 200vh;
+  height: auto;
   width:100vw;
   display: flex;
   flex-direction: column;
@@ -16,11 +16,12 @@ const Section = styled.section`
 const Container = styled.div`
   height: 100vh;
   width: 99vw;
-  display: flex;
-  flex-direction: column;
+  display: flexbox;
+  flex-flow: wrap;
+  flex: 1 100%;
 `;
 
-const Pcard = styled.div`
+const Pcard = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -34,7 +35,7 @@ const Pcard = styled.div`
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 `
-const Img = styled.img`
+const Logo = styled.img`
   border: 1px solid rgba(255,255,255,0.2);
   border-radius:80px;
   height:60px;
@@ -68,6 +69,22 @@ const Title = styled.h1`
   color: #0000;
   -webkit-background-clip: text;
 `
+const Title1 = styled.h2 `
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  font-size:2rem;
+  border: 0px;
+  border-bottom-width: 2px;
+  border-style: dashed;
+  --tw-border-opacity: 1;
+  border-color: rgb(42 46 53 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+`
+
 const Subtitle = styled.h2`
   font-family: 'Raleway', sans-serif;
   font-size:10px;
@@ -145,9 +162,65 @@ const Samp = styled.li`
 `
 const Item = styled.li`
   padding:10px;
-  font-family: 'Rajdhani', sans-serif;
-  font-size:16pItem
+  font-family: 'Noto sans', sans-serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:16px;
+  text-align: justify;
+  text-justify: inter-word;
 `
+const Left = styled.div`
+  flex:4 0px;
+  order: 1;
+  position: relative;
+`
+const Right = styled.div`
+  flex:1 0px;
+  order: 2;
+  position: sticky;
+  top: 0;
+`
+const Img = styled.img`
+  width: auto;
+  height: 10em;
+  border: 1px solid rgba(255, 100, 130, 0.4);
+  border-radius:10px;
+  margin-top:5px;
+  margin-bottom:5px;
+  margin-left:2px;
+  margin-right:2px;
+  padding:0.5em;
+
+`
+const Links = styled.a`
+  color: rgba(10,17,30,0.8);
+  font-Size: 14px;
+  transition: all 0.5 linear;
+  &:hover{
+    color: rgba(100,17,250,0.8);
+  }
+`
+
+const Kbd = styled.kbd`
+  display: inline-block;
+  border: 1px solid #333;
+  background-color: #222;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  &:hover{
+    background-color: #444;
+  }
+  &:active {
+    background-color: #666;
+    box-shadow: none;
+  }
+`
+
+
 function escapeHtml(html) {
   return html.replace(/&/g, "&amp;")
              .replace(/</g, "&lt;")
@@ -167,13 +240,13 @@ const Weather = () => {
     hljs.highlightAll();
   });
   
- 
+  
 
   return (
     <Section>
         <Container>
-          <Pcard>
-            <Text1><Img src="https://avatars.githubusercontent.com/u/118198968?v=4" alt="suvangs"/>By Suvan GS</Text1>
+         <Pcard>
+            <Text1><Logo src="https://avatars.githubusercontent.com/u/118198968?v=4" alt="suvangs"/>By Suvan GS</Text1>
             <Title>Weather Website with Open Weather Api</Title>  
             <List>
               <Samp>{`#Api`} </Samp>  
@@ -181,6 +254,9 @@ const Weather = () => {
             </List>
             <Button onClick={() => window.open('https://github.com/greeenboi/weather-website')}>Source Code</Button>
           </Pcard>
+         
+         <div style={{flex:"1",display:"flex"}}>
+          <Left>
           <Card>
             <Text2>
               For this Project we will be creating a website that shows weather information on a particular city.<br />
@@ -190,31 +266,72 @@ const Weather = () => {
               👉Then I will help you setup the project as a simple Vite application with JS, Tailwind css and Publish your Website to a service provider like Netlify or Vercel.<br /><br />
               <Subtitle onClick={() => window.open('https://whatstheweatherhere.netlify.app')} >||Try out a demo here||</Subtitle>
             </Text2>
-            <Text2>
-              <b>Contents 👇</b>
-              <ul style={{listStyle:"none",gap:"5px"}}>
-                <Item><a href="#Apicreate">Creating an account on Open Weather Api</a></Item>
-              </ul>
-            </Text2>
+            
           </Card>
           <Card>
+            <Title1>Account Creation</Title1>
             <Text2 id="Apicreate">
               To create an account on Open Weather follow the instructions below👇
               <ul style={{listStyle:"none",gap:"10px"}}>
-                <Item><button style={{border:'2px',borderColor:"#fff",backgroundColor:"rgba(10,10,10,0.2)", padding:"8px"}} onClick={() => window.open('https://home.openweathermap.org/users/sign_up')}>{`>proceed to their website and create an account<`}</button></Item>
-                <Item>Once created, Proceed to your Api Keys <a href="https://home.openweathermap.org/api_keys">page</a> </Item>
+                <Item><button style={{border:'2px',borderColor:"#fff",backgroundColor:"rgba(10,10,10,0.2)", padding:"8px",boxShadow:"0 2px 4px rgba(0, 0, 0, 0.2)"}} onClick={() => window.open('https://home.openweathermap.org/users/sign_up')}>{`> Click me to proceed to their website and create an account<`}</button></Item>
+                <Item>Once created, Proceed to your Api Keys <button style={{border:'2px',borderColor:"#fff",backgroundColor:"rgba(10,10,10,0.2)", padding:"8px",boxShadow:"0 2px 4px rgba(0, 0, 0, 0.2)"}} onClick={() => window.open('https://home.openweathermap.org/api_keys')}>{`>page<`}</button></Item>
                 <Item>
-                  <img src=""/> 
+                  <Img src="https://i.postimg.cc/y6bR5ZTm/image-2023-07-16-181303445.png"/> <br /><br />
                   Copy your Api-Key and keep it aside for now. We will need this later when we make requests to the provider for weather data
                 </Item>
               </ul>
             </Text2>
+          </Card>
+          <Card>
+            <Title1>Simple Page Creation</Title1>
+            <Text2 id="Pagecreate"> 
+              Now Let's Create a new Page with Vite Which has an Input field, a button and a Card which displays our Data.<br />
+              <ul style={{listStyle:"none",gap:"20px"}}>
+                  <Item> 
+                    To begin with let's create our directory and open it in our preferred Code editor, I will be using VS Code, Create a new folder in your preferred directory and open Vs code from that directory.<br /><br />
+                    Bring up your in-built terminal by clicking <Kbd>CTRL</Kbd> + <Kbd>SHIFT</Kbd> + <Kbd>~</Kbd> and type <br />
+                    <pre>
+                      <Code className="language-node" content= {`npm create vite@latest`} />
+                    </pre>
+                  </Item>
+                  <Item>
+                    Then Using your arrow keys to navigate and enter key to select, type the name and directory name of your project and select Vanilla for your framework and Javascript for your language. <br /><br />
+                    Once the Download Completes, Navigate to your project directory and type the following commands in your terminal.< br />
+                    <pre>
+                      <Code className="language-node" content= {`npm install`} />
+                    </pre>
+                    After node installs all your dependencies, you can test out the boilerplate site by running your Development server with the following command: <br /><br />
+                    <pre>
+                      <Code className="language-node" content= {`npm run dev`} />
+                    </pre>
+                  </Item>
+                  <Item>
+                    Your directory should look like this:<br /><br />
+                    <Img src="https://i.postimg.cc/PrRn3xjc/image-2023-07-16-191430933.png" /> <br /><br />
+                    For now, You can go to my gist and copy the next parts of code .
+                  </Item>
+
+              </ul>
+            </Text2>
+          </Card>
             <div>
             <pre>
               <Code className="language-javascript" content= {`useEffect(() => { hljs.highlightAll(); });`}/>
             </pre>
             </div>
-          </Card>
+          </Left>
+          <Right>
+            <Card>
+              <Text2>
+                  <b>Contents 👇</b>
+                  <ul style={{listStyle:"none"}}>
+                    <Item style={{listStyle:"outside"}}><Links href="#Apicreate" >Creating an account on Open Weather Api</Links></Item>
+                    <Item style={{listStyle:"outside"}}><Links href="#Pagecreate" >Creating a simple page</Links></Item>
+                  </ul>
+              </Text2>
+            </Card>
+          </Right>
+        </div>
         </Container>
     </Section>
   )
