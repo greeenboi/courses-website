@@ -222,17 +222,17 @@ const Kbd = styled.kbd`
 
 
 function escapeHtml(html) {
-  return html.replace(/&/g, "&amp;")
-             .replace(/</g, "&lt;")
-             .replace(/>/g, "&gt;")
-             .replace(/"/g, "&quot;")
-             .replace(/'/g, "&#039;");
+  return html.replace('&', "&amp;")
+             .replace("&lt;", /</g)
+             .replace("&gt;",/>/g)
+             .replace("&quot;",/"/g)
+             .replace("&#039;",/'/g );
 }
 
 function Code({ content }) {
   const escapedHTML = escapeHtml(content);
 
-  return <code>{escapedHTML}</code>;
+  return <code style={{padding:"5px",marginBottom:"3px",marginTop:"3px",paddingLeft:'1em',paddingRight:"1em", maxWidth:"fit-content",whiteSpace:"pre-wrap"}}>{escapedHTML}</code>;
 }
 
 const Weather = () => {
@@ -240,11 +240,33 @@ const Weather = () => {
     hljs.highlightAll();
   });
   
+  const codedata1 = `
+    <div class="container mx-auto my-8 px-4"> 
+    <title class="">Weather Website</title>
+    <form class="flex flex-col md:flex-row md:items-center bg-white p-8 rounded shadow-lg">
+      <label for="city" class="mr-4 mb-4 md:mb-0 font-bold text-gray-700">Enter city name:</label> 
+      <div class="flex-1">
+        <input type="text" id="city" name="city" class="w-full rounded border-gray-400 border-2 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"&gt
+      </div><button type="submit" class="meta-link">Get Weather</button>
+    </form>
+    </div> `
+  const codedata2 = `
+  <div class="bg-white rounded shadow-lg p-8 mt-8">
+    <p class="my-5 font-bold text-3xl text-gray-700">Weather for <span id="location"></span></p>
+    <p class="my-4 text-gray-700">Time: <span id="time"></span></p>
+    <p class="my-4 text-gray-700">Temperature: <span id="temperature"></span> &deg;C</p>
+    <p class="my-4 text-gray-700">Humidity:<span id="humidity"></span> % </p>
+    <p class="my-4 text-gray-700">Weather Condtion: <span id="description"></span></p>
+    <p class="my-4 text-gray-700">Cloudiness %: <span id="cloudiness"></span></p>
+    <p class="my-4 text-gray-700">Precipitation %: <span id="precipitation"></span></p>
+  </div>
+  `
   
 
   return (
     <Section>
         <Container>
+
          <Pcard>
             <Text1><Logo src="https://avatars.githubusercontent.com/u/118198968?v=4" alt="suvangs"/>By Suvan GS</Text1>
             <Title>Weather Website with Open Weather Api</Title>  
@@ -268,6 +290,8 @@ const Weather = () => {
             </Text2>
             
           </Card>
+
+
           <Card>
             <Title1>Account Creation</Title1>
             <Text2 id="Apicreate">
@@ -308,6 +332,29 @@ const Weather = () => {
                   <Item>
                     Your directory should look like this:<br /><br />
                     <Img src="https://i.postimg.cc/PrRn3xjc/image-2023-07-16-191430933.png" /> <br /><br />
+                    Navigate to your index.html file and remove all content within the {`<body>`} element. <br /><br />
+                    <Img src="https://i.postimg.cc/tgqxF5mb/image-2023-07-17-211356242.png" alt="img" /> <br /><br />
+                  </Item>
+              </ul>
+            </Text2>
+          </Card>
+
+
+          <Card>
+            <Title1>Page Creation</Title1>
+            <Text2 id="BasicUIUX">
+                <ul>
+                  <Item>
+                    Now, We can work on making our landing page which will contain our Navbar which has our Logo, an input field with a button and our Card which has our data. <br />
+                    Lets start by creating our main container element.<br/>
+                    <pre>
+                      <Code className='language-html' content={codedata1}/>
+                    </pre>
+                    <br />
+                    Now lets add our Card under the input field. We will have to pass our requested data to this Card later.
+                    <pre>
+                      <Code className='language-html' content={codedata2}/>
+                    </pre>
                     For now, You can go to my gist and copy the next parts of code .
                   </Item>
 
@@ -320,6 +367,7 @@ const Weather = () => {
             </pre>
             </div>
           </Left>
+
           <Right>
             <Card>
               <Text2>
@@ -327,6 +375,7 @@ const Weather = () => {
                   <ul style={{listStyle:"none"}}>
                     <Item style={{listStyle:"outside"}}><Links href="#Apicreate" >Creating an account on Open Weather Api</Links></Item>
                     <Item style={{listStyle:"outside"}}><Links href="#Pagecreate" >Creating a simple page</Links></Item>
+                    <Item style={{listStyle:"outside"}}><Links href="#BasicUIUX" >Setting up The page</Links></Item>
                   </ul>
               </Text2>
             </Card>
